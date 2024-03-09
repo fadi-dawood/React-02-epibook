@@ -1,24 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import NavbarSec from './components/Navbar/Navbar.jsx'
+import MyFooter from './components/Footer/MyFooter.jsx';
+import Welcome from './components/Welcome/Welcome.jsx'
+import AllTheBooks from './components/AllTheBooks/AllTheBooks.jsx';
+import FantasyBooks from './DATA/fantasy.json'
+import HistoryBooks from './DATA/history.json'
+import HorrorBooks from './DATA/horror.json'
+import RomanceBooks from './DATA/romance.json'
+import ScifiBooks from './DATA/scifi.json'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavbarSec />
+
+      <Welcome />
+
+      <AllTheBooks Books={FantasyBooks} Category='fantasy' NumOfBooks={10} />
+
+      <AllTheBooks Books={HistoryBooks} Category='history' NumOfBooks={10} />
+
+      <AllTheBooks Books={HorrorBooks} Category='horror' NumOfBooks={10} />
+
+      <AllTheBooks Books={RomanceBooks} Category='romance' NumOfBooks={10} />
+
+      <AllTheBooks Books={ScifiBooks} Category='scifi' NumOfBooks={10} />
+
+      <MyFooter />
+    </>
   );
 }
 

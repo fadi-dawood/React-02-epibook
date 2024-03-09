@@ -1,0 +1,7 @@
+.book-title{
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Numero massimo di righe da mostrare */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
