@@ -1,6 +1,7 @@
 .book-title {
+    font-size: 13pt;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     /* Numero massimo di righe da mostrare */
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -9,4 +10,9 @@
 .selected-card {
     -webkit-box-shadow: 5px 5px 15px 5px #000000;
     box-shadow: 5px 5px 15px 5px #000000;
+}
+
+
+.book-img{
+    height: 400px;
 }
