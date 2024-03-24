@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -16,11 +18,13 @@ import ScifiBooks from './DATA/scifi.json'
 
 import ThemeContextProvider from './Context/ThemeContextProvider.jsx';
 import SearchContextProvider from './Context/SearchContextProvider.jsx';
+import LatestReleaseContextProvider from './Context/LatestReleaseContextProvider.jsx';
+import CommentArea from './components/CommentArea/CommentArea.jsx';
+import AppBody from './components/AppBody/AppBody.jsx';
 
 
 function App() {
 
-  const [activeSearch, setActiveSearch] = useState(false)
 
   return (
     <>
@@ -28,32 +32,17 @@ function App() {
 
         <SearchContextProvider>
 
-          <NavbarSec setActiveSearch={setActiveSearch} />
+          <NavbarSec/>
 
           <Welcome />
 
+          <LatestReleaseContextProvider >
 
-          {activeSearch &&
+            <AppBody/>
 
-            <AllTheBooks Books={[...FantasyBooks, ...HistoryBooks, ...HorrorBooks, ...RomanceBooks, ...ScifiBooks]} />
-
-          }
-          {!activeSearch &&
-            <>
-              <AllTheBooks Books={FantasyBooks} Category='fantasy' NumOfBooks={12} />
-
-              <AllTheBooks Books={HistoryBooks} Category='history' NumOfBooks={12} />
-
-              <AllTheBooks Books={HorrorBooks} Category='horror' NumOfBooks={12} />
-
-              <AllTheBooks Books={RomanceBooks} Category='romance' NumOfBooks={12} />
-
-              <AllTheBooks Books={ScifiBooks} Category='scifi' NumOfBooks={12} />
-            </>
-          }
+          </LatestReleaseContextProvider>
 
         </SearchContextProvider>
-
 
         <MyFooter />
 

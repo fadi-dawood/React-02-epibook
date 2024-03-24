@@ -1,9 +1,9 @@
-import React, { children, createContext, useState } from 'react'
+import React, { createContext, useState } from 'react'
 
 
 export const SearchContext = createContext(null);
 
-export default function SearchContextProvider({children}) {
+export default function SearchContextProvider({ children }) {
 
     const [searchTerm, setSearchTerm] = useState("");
 

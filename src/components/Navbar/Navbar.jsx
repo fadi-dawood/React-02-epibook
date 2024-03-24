@@ -7,10 +7,12 @@ import { useContext } from "react";
 import { ThemeContext } from '../../Context/ThemeContextProvider';
 import SearchBar from '../SearchBar/SearchBar';
 
-function NavbarSec({ setActiveSearch }) {
+function NavbarSec() {
 
+  // impostare la thema dell'App con la possibilita di cambiarla dall'utente
   const { theme, setTheme } = useContext(ThemeContext);
 
+  // la funzione per cambiare la thema
   function updateTheme() {
     if (document.getElementById("custom-switch").checked === true) {
       setTheme("dark");
@@ -18,6 +20,7 @@ function NavbarSec({ setActiveSearch }) {
       setTheme("light");
     }
   }
+
   return (
     <Navbar data-bs-theme={theme} bg={theme} expand="lg" className='d-flex flex-column '>
       <Container >
@@ -41,7 +44,7 @@ function NavbarSec({ setActiveSearch }) {
           />
         </Form>
       </Container>
-      <SearchBar setActiveSearch={setActiveSearch} />
+      <SearchBar/>
     </Navbar>
   );
 }

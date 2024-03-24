@@ -5,6 +5,8 @@ import { Button } from "react-bootstrap"
 
 export default function CommentList({ commentList, updateComments, editComment }) {
 
+
+  // la funzione per cancellare un commento dalla lista dei commenti
   async function deleteComment(commentId) {
 
     const deleteEndPoint = "https://striveschool-api.herokuapp.com/api/comments/"
@@ -30,8 +32,19 @@ export default function CommentList({ commentList, updateComments, editComment }
     }
   }
 
+
+
+
   return (
-    <div>
+    <>
+      {/* Non ci sono commenti */}
+      {commentList.length === 0 &&
+        <div>
+          <h6>No comments aviable</h6>
+        </div>
+      }
+
+      {/* Ci sono commenti */}
       {commentList.length > 0 &&
         <div>
           <h5>Comments:</h5>
@@ -39,9 +52,10 @@ export default function CommentList({ commentList, updateComments, editComment }
             {
               commentList.map((Element, index) => {
                 const { comment, _id } = Element
+
                 return (
                   <>
-                    <div className="d-flex justify-content-between">
+                    <div className="d-flex justify-content-between align-items-center my-2">
                       <li key={index} className="">
                         {comment}
                       </li>
@@ -62,11 +76,7 @@ export default function CommentList({ commentList, updateComments, editComment }
           </ul>
         </div>
       }
-      {commentList.length === 0 &&
-        <div>
-          <h6>No comments aviable</h6>
-        </div>
-      }
-    </div>
+
+    </>
   )
 }

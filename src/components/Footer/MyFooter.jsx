@@ -1,12 +1,13 @@
 import { useContext } from 'react';
 import { Container } from 'react-bootstrap';
-import './MyFooter.css'
 import { ThemeContext } from '../../Context/ThemeContextProvider';
 
 
 function MyFooter() {
 
+    // impostare la thema dell'App
     const { theme } = useContext(ThemeContext);
+
     return (
         <div className={`m-0 ${theme === "dark" ? "bg-dark text-white" : ""}`}>
             <Container>

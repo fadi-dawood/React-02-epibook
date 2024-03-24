@@ -6,17 +6,22 @@ import { SearchContext } from '../../Context/SearchContextProvider';
 
 
 
-export default function SearchBar({setActiveSearch}) {
+export default function SearchBar() {
+
+    // impostare la thema dell'App
+    const { theme } = useContext(ThemeContext);
+
+    // variabile locale per salvare il valore dell'input di ricerca
     const [searchWorld, setSearchWorld] = useState("");
 
-    const {setSearchTerm} = useContext(SearchContext);
+    // variabile generale per salvare il valore dell'input di ricerca
+    const { setSearchTerm } = useContext(SearchContext);
 
+    // quando si clicca su "Search"
     const updateSearch = () => {
         setSearchTerm(searchWorld);
-        setActiveSearch(true);
     };
 
-    const {theme} = useContext(ThemeContext);
 
     return (
         <Form.Group data-bs-theme={theme} bg={theme} className="mb-3 px-5 d-flex justify-contents-center ">
@@ -26,7 +31,7 @@ export default function SearchBar({setActiveSearch}) {
                 placeholder="Search your book here..."
                 onChange={(event) => setSearchWorld(event.target.value)}
             />
-            <Button className='ms-3'  variant="primary" type="button" onClick={updateSearch}>
+            <Button className='ms-3' variant="primary" type="button" onClick={updateSearch}>
                 Search
             </Button>
         </Form.Group>

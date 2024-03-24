@@ -1,8 +1,8 @@
-import React, { children, createContext, useState } from 'react'
+import React, { createContext, useState } from 'react'
 
 export const ThemeContext = createContext(null);
 
-export default function ThemeContextProvider({children}) {
+export default function ThemeContextProvider({ children }) {
 
     const [theme, setTheme] = useState("light");
 
