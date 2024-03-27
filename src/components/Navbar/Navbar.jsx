@@ -37,6 +37,7 @@ function NavbarSec() {
         </Navbar.Collapse>
         <Form >
           <Form.Check
+            className={`m-0 ${theme === "dark" ? "text-white" : ""}`}
             type="switch"
             id="custom-switch"
             label="Dark mode"
@@ -44,7 +45,7 @@ function NavbarSec() {
           />
         </Form>
       </Container>
-      <SearchBar/>
+      <SearchBar />
     </Navbar>
   );
 }

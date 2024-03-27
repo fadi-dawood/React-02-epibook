@@ -1,0 +1,13 @@
+.main-card,
+.card-body {
+    height: 100%;
+}
+
+.main-card>div {
+    display: flex;
+    height: 100%;
+}
+
+.main-card img {
+    object-fit: cover;
+}
