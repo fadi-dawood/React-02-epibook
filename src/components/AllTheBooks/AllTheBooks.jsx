@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import SingleBook from '../SingleBook/SingleBook';
 import { SearchContext } from '../../Context/SearchContextProvider';
+import { Spinner } from 'react-bootstrap';
 
 
 // Si passa a questo componente:
@@ -59,7 +60,7 @@ function AllTheBooks({ Books, Category, NumOfBooks }) {
       ) :
 
         // se l'utente sta cercando libri
-
+        
         <>
           <h2 className='mx-5 pt-5 mb-2'>
             {`Results: ${filteredBooks.length} Books`}

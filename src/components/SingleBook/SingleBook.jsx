@@ -18,7 +18,7 @@ export default function SingleBook({ book }) {
 
     // selectedBook: l'id del libro selezionato dall'utente
     // setVisibleCommentArea: aggirnare la visibilita del CommentArea
-    const { selectedBook, setSelectedBook, setVisibleCommentArea } = useContext(LatestReleaseContext)
+    const { selectedBook, setSelectedBook,visibleCommentArea, setVisibleCommentArea } = useContext(LatestReleaseContext)
 
     // quando si clicca su "Show comments"
     function selectBook() {
@@ -43,7 +43,7 @@ export default function SingleBook({ book }) {
 
 
     return (
-        <Col lg={selectedBook ? 4 : 3} md={selectedBook ? 6 : 4} sm={6} xs={10} className='mb-2'>
+        <Col lg={visibleCommentArea ? 4 : 3} md={visibleCommentArea ? 6 : 4} sm={6} xs={10} className='mb-2'>
             <Card className={`card-container border-0 m-2 ${selectedBook === asin ? "selected-card" : ""} ${theme === "dark" ? "bg-dark text-white" : ""}`}>
                 <Card.Img className='book-img' variant="top" src={img} />
                 <Card.Body>

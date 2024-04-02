@@ -75,8 +75,17 @@ export default function CommentArea() {
 
     // aggiornare la lista dei commenti ogni volta aggiornato selectedBook
     useEffect(() => {
-        showCommentsSec();
-    }, [selectedBook])
+        if (visibleCommentArea) { // Controlla se visibleCommentArea è true
+            showCommentsSec();
+        }
+    }, [selectedBook, visibleCommentArea])
+
+
+    // non mostrare il componente se visibleCommentArea è false 
+    if (!visibleCommentArea) {
+        return null;
+    }
+
 
     // chiudere l'area dei commenti tramite il buttone
     function closeCommentArea() {

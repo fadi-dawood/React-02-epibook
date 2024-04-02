@@ -14,7 +14,7 @@ export default function CommentList({ commentList, updateComments, editComment }
       method: "Delete",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ0ZWQ1YTljNDM3MDAwMTkzYzM3M2YiLCJpYXQiOjE3MTA4NzE3MjgsImV4cCI6MTcxMjA4MTMyOH0.8bOSGh6kxOAt-KJQh5EorxlCfnuMvYEL8Pm0-FlsqCw"
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ0ZWQ1YTljNDM3MDAwMTkzYzM3M2YiLCJpYXQiOjE3MTIwODIyODYsImV4cCI6MTcxMzI5MTg4Nn0.cAil_Qlp7JW8OoOmIcgAJtKgVbu_dTRvA8RrqjMpeQw"
       }
     }
 
@@ -52,23 +52,21 @@ export default function CommentList({ commentList, updateComments, editComment }
             {
               commentList.map((Element, index) => {
                 const { comment, _id } = Element
-
                 return (
                   <>
-                    <div className="d-flex justify-content-between align-items-center my-2">
-                      <li key={index} className="">
+                    <div className="row my-3 d-flex align-items-center">
+                      <li key={index} className="col-9 p-0">
                         {comment}
                       </li>
-                      <div>
-                        <Button variant="danger" onClick={() => deleteComment(_id)}>
-                          <FontAwesomeIcon icon={faTrash} />
+                      <div className="col-3 text-end p-0">
+                        <Button className="px-2" variant="danger" onClick={() => deleteComment(_id)}>
+                          <FontAwesomeIcon style={{ fontSize: "12pt" }} icon={faTrash} />
                         </Button>
-                        <Button className="ms-2" onClick={() => editComment(Element)}>
-                          <FontAwesomeIcon icon={faPenToSquare} />
+                        <Button className="ms-2 px-2" onClick={() => editComment(Element)}>
+                          <FontAwesomeIcon style={{ fontSize: "12pt" }} icon={faPenToSquare} />
                         </Button>
                       </div>
                     </div>
-
                   </>
                 )
               })

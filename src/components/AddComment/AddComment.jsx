@@ -38,7 +38,7 @@ export default function AddComment({ updateComments, commentToEdit }) {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ0ZWQ1YTljNDM3MDAwMTkzYzM3M2YiLCJpYXQiOjE3MTA4NzE3MjgsImV4cCI6MTcxMjA4MTMyOH0.8bOSGh6kxOAt-KJQh5EorxlCfnuMvYEL8Pm0-FlsqCw"
+                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ0ZWQ1YTljNDM3MDAwMTkzYzM3M2YiLCJpYXQiOjE3MTIwODIyODYsImV4cCI6MTcxMzI5MTg4Nn0.cAil_Qlp7JW8OoOmIcgAJtKgVbu_dTRvA8RrqjMpeQw"
                 },
                 body: JSON.stringify(postBody),
             };
@@ -49,7 +49,7 @@ export default function AddComment({ updateComments, commentToEdit }) {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ0ZWQ1YTljNDM3MDAwMTkzYzM3M2YiLCJpYXQiOjE3MTA4NzE3MjgsImV4cCI6MTcxMjA4MTMyOH0.8bOSGh6kxOAt-KJQh5EorxlCfnuMvYEL8Pm0-FlsqCw"
+                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ0ZWQ1YTljNDM3MDAwMTkzYzM3M2YiLCJpYXQiOjE3MTIwODIyODYsImV4cCI6MTcxMzI5MTg4Nn0.cAil_Qlp7JW8OoOmIcgAJtKgVbu_dTRvA8RrqjMpeQw"
                 },
                 body: JSON.stringify(postBody),
             };
